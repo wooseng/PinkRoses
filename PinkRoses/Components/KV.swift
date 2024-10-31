@@ -25,7 +25,7 @@ extension KV {
             return
         }
         mmkv_not_initialized = false
-        let rootDir = NSHomeDirectory() + "/Documents/com.wooseng.kv"
+        let rootDir = NSHomeDirectory() + "/Documents/KV"
         MMKV.initialize(rootDir: rootDir, logLevel: MMKVLogLevel.info)
     }
 }

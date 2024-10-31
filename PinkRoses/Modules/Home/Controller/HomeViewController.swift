@@ -32,5 +32,7 @@ class HomeViewController: BaseViewController {
     
     @objc private func onSettingClick() {
         print("设置")
+        let vc = AccountListViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

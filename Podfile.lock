@@ -362,6 +362,7 @@ PODS:
     - QMUIKit/QMUILog
   - QMUIKit/QMUIResources (4.8.0)
   - QMUIKit/QMUIWeakObjectContainer (4.8.0)
+  - R.swift (7.7.0)
   - Realm (20.0.0):
     - Realm/Headers (= 20.0.0)
   - Realm/Headers (20.0.0)
@@ -414,6 +415,7 @@ DEPENDENCIES:
   - LookinServer/Swift
   - MMKV (= 2.0.0)
   - QMUIKit (= 4.8.0)
+  - R.swift
   - RealmSwift (= 20.0.0)
   - RxCocoa (= 6.8.0)
   - RxSwift (= 6.8.0)
@@ -431,6 +433,7 @@ SPEC REPOS:
     - MMKV
     - MMKVCore
     - QMUIKit
+    - R.swift
     - Realm
     - RealmSwift
     - RxCocoa
@@ -449,6 +452,7 @@ SPEC CHECKSUMS:
   MMKV: f7d1d5945c8765f97f39c3d121f353d46735d801
   MMKVCore: c04b296010fcb1d1638f2c69405096aac12f6390
   QMUIKit: 3c622fe3c55c0dccfad750634bd9ee5e7ade9a53
+  R.swift: 33e7082885d0c0bac7ae20ef7d2845a6a920ca11
   Realm: a799b5f9145623fb0bfe149fe81422863631dd0f
   RealmSwift: f8c4354ebd5053343e6ab9f4eda244145308a51e
   RxCocoa: 2d33c1e1e5d66492052ad46b11024ae287572880
@@ -457,6 +461,6 @@ SPEC CHECKSUMS:
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
   SwifterSwift: dd00873fb09cde19da88bdb2878f9fe70fe27b0f
 
-PODFILE CHECKSUM: b8b0ed18fa48a22b20b786c1ef9db9e6a107937d
+PODFILE CHECKSUM: 044cef75278225bd41e160202ac6272eae8eb537
 
 COCOAPODS: 1.16.1

@@ -12,7 +12,7 @@ target 'PinkRoses' do
   pod 'MMKV', '2.0.0'
   pod 'RealmSwift', '20.0.0'
   pod 'Alamofire'
-
+  pod 'R.swift'
   # 调试工具
   pod 'LookinServer', :subspecs => ['Swift'], :configurations => ['Debug']
 end

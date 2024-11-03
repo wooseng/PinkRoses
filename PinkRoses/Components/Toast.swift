@@ -12,14 +12,17 @@ struct Toast {
     private init() {}
     
     static func show(_ msg: String) {
-        QMUITips.show(withText: msg)
+        let tips = QMUITips.show(withText: msg)
+        tips.isUserInteractionEnabled = false
     }
     
     static func success(_ msg: String) {
-        QMUITips.showSucceed(msg)
+        let tips = QMUITips.showSucceed(msg)
+        tips.isUserInteractionEnabled = false
     }
     
     static func error(_ msg: String) {
-        QMUITips.showError(msg)
+        let tips = QMUITips.showError(msg)
+        tips.isUserInteractionEnabled = false
     }
 }

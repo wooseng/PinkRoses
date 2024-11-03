@@ -9,6 +9,7 @@ import UIKit
 
 /// 标题+值
 class ValueTableViewCell: UITableViewCell {
+    /// 标题视图
     private(set) lazy var titleLabel: UILabel = {
         let tmp = UILabel()
         tmp.textColor = .c3C3C3C
@@ -16,11 +17,31 @@ class ValueTableViewCell: UITableViewCell {
         return tmp
     }()
     
+    /// 值视图
     private(set) lazy var valueLabel: UILabel = {
         let tmp = UILabel()
         tmp.textColor = .c666666
         tmp.font = .systemFont(ofSize: 16)
         tmp.numberOfLines = 0
+        return tmp
+    }()
+    
+    /// 值右侧图标视图
+    private(set) lazy var rightImageView: UIImageView = {
+        let tmp = UIImageView()
+        tmp.image = R.image.arrow_right()?.resize(width: 25, height: 25)
+        tmp.contentMode = .scaleAspectFit
+        return tmp
+    }()
+    
+    private lazy var rightStackView: UIStackView = {
+        let tmp = UIStackView()
+        tmp.axis = .horizontal
+        tmp.spacing = 0
+        tmp.alignment = .center
+        tmp.distribution = .equalSpacing
+        tmp.addArrangedSubview(valueLabel)
+        tmp.addArrangedSubview(rightImageView)
         return tmp
     }()
     
@@ -31,7 +52,7 @@ class ValueTableViewCell: UITableViewCell {
         tmp.alignment = .center
         tmp.distribution = .equalSpacing
         tmp.addArrangedSubview(titleLabel)
-        tmp.addArrangedSubview(valueLabel)
+        tmp.addArrangedSubview(rightStackView)
         return tmp
     }()
     
@@ -55,6 +76,7 @@ class ValueTableViewCell: UITableViewCell {
     private func setupSubviews() {
         backgroundColor = .white
         selectionStyle = .none
+        accessoryType = .none
         contentView.addSubview(stackView)
         contentView.addSubview(separator)
     }

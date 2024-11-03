@@ -24,7 +24,7 @@ class HomeViewController: BaseViewController {
     
     override func setupNavigationItems() {
         super.setupNavigationItems()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gearshape"),
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: R.image.settings()?.resize(width: 25, height: 25),
                                                             style: .plain,
                                                             target: self,
                                                             action: #selector(onSettingClick))

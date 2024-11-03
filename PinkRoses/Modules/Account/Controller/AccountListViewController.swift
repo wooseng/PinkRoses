@@ -48,6 +48,14 @@ class AccountListViewController: BaseViewController {
         }
     }
     
+    override func setupNavigationItems() {
+        super.setupNavigationItems()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: R.image.add()?.resize(width: 25, height: 25),
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(onAddClick))
+    }
+    
     override func setupBindings() {
         super.setupBindings()
         dataSource.observe(on: MainScheduler.instance).bind { [weak self] _ in
@@ -59,6 +67,21 @@ class AccountListViewController: BaseViewController {
     private func loadData() {
         let list = PgyAccountRealm.queryAll()
         dataSource.accept(list)
+    }
+    
+    /// 添加按钮点击事件
+    @objc private func onAddClick() {
+        editAccount(id: nil)
+    }
+    
+    /// 编辑按钮点击事件
+    private func editAccount(id: String?) {
+        let vc = AccountEditViewController(id: id)
+        vc.completion = { [weak self] in
+            guard let self else { return }
+            self.loadData()
+        }
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -106,11 +129,17 @@ extension AccountListViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let record = dataSource.value[indexPath.row]
-        let delete = UIContextualAction(style: .destructive, title: "删除") { _, _, completion in
+        let edit = UIContextualAction(style: .normal, title: "编辑") { [weak self] _, _, completion in
+            guard let self else { return }
+            completion(true)
+            self.editAccount(id: record.id)
+        }
+        let delete = UIContextualAction(style: .destructive, title: "删除") { [weak self] _, _, completion in
+            guard let self else { return }
+            completion(true)
             PgyAccountRealm.delete(id: record.id)
             self.loadData()
-            completion(true)
         }
-        return UISwipeActionsConfiguration(actions: [delete])
+        return UISwipeActionsConfiguration(actions: [delete, edit])
     }
 }

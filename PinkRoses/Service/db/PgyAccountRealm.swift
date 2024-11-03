@@ -31,7 +31,7 @@ class PgyAccountRealm: Object {
 
 extension PgyAccountRealm {
     /// 更新记录，如果`id`为空，则会新增一条记录
-    static func update(id: String? = nil, accountName: String, apiKey: String, userKey: String) {
+    static func update(id: String? = nil, accountName: String, apiKey: String, userKey: String) throws {
         do {
             let realm = try Realm.getDefault()
             if let id, let record = realm.object(ofType: PgyAccountRealm.self, forPrimaryKey: id) {
@@ -52,6 +52,7 @@ extension PgyAccountRealm {
             }
         } catch {
             print("新增或更新账号失败：", error.localizedDescription)
+            throw error
         }
     }
     

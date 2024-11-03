@@ -23,6 +23,11 @@ class BaseViewController: UIViewController, QMUINavigationControllerDelegate {
         setupBindings()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        view.endEditing(true)
+    }
+    
     func shouldCustomizeNavigationBarTransitionIfHideable() -> Bool { true }
     
     func preferredNavigationBarHidden() -> Bool { false }

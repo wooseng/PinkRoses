@@ -22,7 +22,7 @@
 		317A50FF2CD75F38007A44A4 /* Realm+SchemaVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A50D62CD75F38007A44A4 /* Realm+SchemaVersion.swift */; };
 		317A51002CD75F38007A44A4 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A50D72CD75F38007A44A4 /* UIColor+Extension.swift */; };
 		317A51012CD75F38007A44A4 /* AccountListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A50D92CD75F38007A44A4 /* AccountListViewController.swift */; };
-		317A51022CD75F38007A44A4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A50DC2CD75F38007A44A4 /* HomeViewController.swift */; };
+		317A51022CD75F38007A44A4 /* AppListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A50DC2CD75F38007A44A4 /* AppListViewController.swift */; };
 		317A51032CD75F38007A44A4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A50E12CD75F38007A44A4 /* SettingsViewController.swift */; };
 		317A51042CD75F38007A44A4 /* SettingsRowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A50E32CD75F38007A44A4 /* SettingsRowItem.swift */; };
 		317A51052CD75F38007A44A4 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A50ED2CD75F38007A44A4 /* R.generated.swift */; };
@@ -34,6 +34,13 @@
 		317A510E2CD767A8007A44A4 /* AccountEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A510D2CD767A8007A44A4 /* AccountEditViewController.swift */; };
 		317A51112CD76E2F007A44A4 /* TitleValueItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A51102CD76E2F007A44A4 /* TitleValueItem.swift */; };
 		317A51132CD77110007A44A4 /* TitleTextFieldItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A51122CD77110007A44A4 /* TitleTextFieldItem.swift */; };
+		317A51162CD90DD1007A44A4 /* PgyTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A51152CD90DD1007A44A4 /* PgyTarget.swift */; };
+		317A512E2CD91626007A44A4 /* PgyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A512D2CD91626007A44A4 /* PgyResponse.swift */; };
+		317A51312CDA5935007A44A4 /* PgyAppListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A51302CDA5935007A44A4 /* PgyAppListModel.swift */; };
+		317A51332CDA5944007A44A4 /* PgyAppListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A51322CDA5944007A44A4 /* PgyAppListResponse.swift */; };
+		317A51502CDA5C0D007A44A4 /* AppListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A514F2CDA5C0D007A44A4 /* AppListCell.swift */; };
+		317A51552CDA6911007A44A4 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A51542CDA6911007A44A4 /* UIView+Extension.swift */; };
+		317A51582CDA6ACF007A44A4 /* AppListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A51572CDA6ACF007A44A4 /* AppListViewModel.swift */; };
 		A6739208C5A600BBB828BA51 /* Pods_PinkRoses.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6792D9E38477AA56C7413020 /* Pods_PinkRoses.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,7 +77,7 @@
 		317A50D62CD75F38007A44A4 /* Realm+SchemaVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Realm+SchemaVersion.swift"; sourceTree = "<group>"; };
 		317A50D72CD75F38007A44A4 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		317A50D92CD75F38007A44A4 /* AccountListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountListViewController.swift; sourceTree = "<group>"; };
-		317A50DC2CD75F38007A44A4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		317A50DC2CD75F38007A44A4 /* AppListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppListViewController.swift; sourceTree = "<group>"; };
 		317A50E12CD75F38007A44A4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		317A50E32CD75F38007A44A4 /* SettingsRowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowItem.swift; sourceTree = "<group>"; };
 		317A50E72CD75F38007A44A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -83,6 +90,13 @@
 		317A510D2CD767A8007A44A4 /* AccountEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountEditViewController.swift; sourceTree = "<group>"; };
 		317A51102CD76E2F007A44A4 /* TitleValueItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleValueItem.swift; sourceTree = "<group>"; };
 		317A51122CD77110007A44A4 /* TitleTextFieldItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextFieldItem.swift; sourceTree = "<group>"; };
+		317A51152CD90DD1007A44A4 /* PgyTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PgyTarget.swift; sourceTree = "<group>"; };
+		317A512D2CD91626007A44A4 /* PgyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PgyResponse.swift; sourceTree = "<group>"; };
+		317A51302CDA5935007A44A4 /* PgyAppListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PgyAppListModel.swift; sourceTree = "<group>"; };
+		317A51322CDA5944007A44A4 /* PgyAppListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PgyAppListResponse.swift; sourceTree = "<group>"; };
+		317A514F2CDA5C0D007A44A4 /* AppListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppListCell.swift; sourceTree = "<group>"; };
+		317A51542CDA6911007A44A4 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		317A51572CDA6ACF007A44A4 /* AppListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppListViewModel.swift; sourceTree = "<group>"; };
 		31E849BE2CD3C427001BEF6E /* PinkRoses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PinkRoses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31E849D42CD3C428001BEF6E /* PinkRosesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PinkRosesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		31E849DE2CD3C428001BEF6E /* PinkRosesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PinkRosesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,6 +192,7 @@
 				317A50D62CD75F38007A44A4 /* Realm+SchemaVersion.swift */,
 				317A50D72CD75F38007A44A4 /* UIColor+Extension.swift */,
 				317A510B2CD75FE3007A44A4 /* UIImage+Extension.swift */,
+				317A51542CDA6911007A44A4 /* UIView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -202,7 +217,7 @@
 		317A50DD2CD75F38007A44A4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				317A50DC2CD75F38007A44A4 /* HomeViewController.swift */,
+				317A50DC2CD75F38007A44A4 /* AppListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -210,6 +225,8 @@
 		317A50DE2CD75F38007A44A4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				317A51302CDA5935007A44A4 /* PgyAppListModel.swift */,
+				317A51322CDA5944007A44A4 /* PgyAppListResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -217,18 +234,20 @@
 		317A50DF2CD75F38007A44A4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				317A514F2CDA5C0D007A44A4 /* AppListCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		317A50E02CD75F38007A44A4 /* Home */ = {
+		317A50E02CD75F38007A44A4 /* App */ = {
 			isa = PBXGroup;
 			children = (
 				317A50DD2CD75F38007A44A4 /* Controller */,
 				317A50DE2CD75F38007A44A4 /* Model */,
 				317A50DF2CD75F38007A44A4 /* View */,
+				317A51562CDA6AC3007A44A4 /* ViewModel */,
 			);
-			path = Home;
+			path = App;
 			sourceTree = "<group>";
 		};
 		317A50E22CD75F38007A44A4 /* Controller */ = {
@@ -260,7 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				317A50DB2CD75F38007A44A4 /* Account */,
-				317A50E02CD75F38007A44A4 /* Home */,
+				317A50E02CD75F38007A44A4 /* App */,
 				317A50E52CD75F38007A44A4 /* Settings */,
 			);
 			path = Modules;
@@ -289,6 +308,7 @@
 		317A50F12CD75F38007A44A4 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				317A51142CD90D60007A44A4 /* Api */,
 				317A50F02CD75F38007A44A4 /* db */,
 			);
 			path = Service;
@@ -315,6 +335,31 @@
 				317A50CC2CD75F38007A44A4 /* ValueTableViewCell.swift */,
 			);
 			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		317A51142CD90D60007A44A4 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				317A512F2CDA591E007A44A4 /* Pgy */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		317A512F2CDA591E007A44A4 /* Pgy */ = {
+			isa = PBXGroup;
+			children = (
+				317A512D2CD91626007A44A4 /* PgyResponse.swift */,
+				317A51152CD90DD1007A44A4 /* PgyTarget.swift */,
+			);
+			path = Pgy;
+			sourceTree = "<group>";
+		};
+		317A51562CDA6AC3007A44A4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				317A51572CDA6ACF007A44A4 /* AppListViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		31E849B52CD3C427001BEF6E = {
@@ -560,8 +605,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				317A50F32CD75F38007A44A4 /* BaseNavigationController.swift in Sources */,
+				317A51502CDA5C0D007A44A4 /* AppListCell.swift in Sources */,
 				317A50F42CD75F38007A44A4 /* BaseTabBarController.swift in Sources */,
 				317A51112CD76E2F007A44A4 /* TitleValueItem.swift in Sources */,
+				317A51312CDA5935007A44A4 /* PgyAppListModel.swift in Sources */,
+				317A512E2CD91626007A44A4 /* PgyResponse.swift in Sources */,
 				317A50F52CD75F38007A44A4 /* BaseViewController.swift in Sources */,
 				317A50F62CD75F38007A44A4 /* SwitchTableViewCell.swift in Sources */,
 				317A510E2CD767A8007A44A4 /* AccountEditViewController.swift in Sources */,
@@ -572,17 +620,21 @@
 				317A50FB2CD75F38007A44A4 /* Loading.swift in Sources */,
 				317A50FC2CD75F38007A44A4 /* Tips.swift in Sources */,
 				317A50FD2CD75F38007A44A4 /* Toast.swift in Sources */,
+				317A51162CD90DD1007A44A4 /* PgyTarget.swift in Sources */,
 				317A51132CD77110007A44A4 /* TitleTextFieldItem.swift in Sources */,
 				317A50FE2CD75F38007A44A4 /* Realm+Extension.swift in Sources */,
 				317A50FF2CD75F38007A44A4 /* Realm+SchemaVersion.swift in Sources */,
 				317A51002CD75F38007A44A4 /* UIColor+Extension.swift in Sources */,
 				317A51012CD75F38007A44A4 /* AccountListViewController.swift in Sources */,
 				317A510C2CD75FE3007A44A4 /* UIImage+Extension.swift in Sources */,
-				317A51022CD75F38007A44A4 /* HomeViewController.swift in Sources */,
+				317A51022CD75F38007A44A4 /* AppListViewController.swift in Sources */,
 				317A51032CD75F38007A44A4 /* SettingsViewController.swift in Sources */,
+				317A51582CDA6ACF007A44A4 /* AppListViewModel.swift in Sources */,
+				317A51552CDA6911007A44A4 /* UIView+Extension.swift in Sources */,
 				317A51042CD75F38007A44A4 /* SettingsRowItem.swift in Sources */,
 				317A51052CD75F38007A44A4 /* R.generated.swift in Sources */,
 				317A51062CD75F38007A44A4 /* PgyAccountRealm.swift in Sources */,
+				317A51332CDA5944007A44A4 /* PgyAppListResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

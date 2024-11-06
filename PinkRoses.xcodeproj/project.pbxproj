@@ -41,6 +41,7 @@
 		317A51502CDA5C0D007A44A4 /* AppListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A514F2CDA5C0D007A44A4 /* AppListCell.swift */; };
 		317A51552CDA6911007A44A4 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A51542CDA6911007A44A4 /* UIView+Extension.swift */; };
 		317A51582CDA6ACF007A44A4 /* AppListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A51572CDA6ACF007A44A4 /* AppListViewModel.swift */; };
+		317A515A2CDBA33A007A44A4 /* PgyAppRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A51592CDBA33A007A44A4 /* PgyAppRealm.swift */; };
 		A6739208C5A600BBB828BA51 /* Pods_PinkRoses.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6792D9E38477AA56C7413020 /* Pods_PinkRoses.framework */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +98,7 @@
 		317A514F2CDA5C0D007A44A4 /* AppListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppListCell.swift; sourceTree = "<group>"; };
 		317A51542CDA6911007A44A4 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		317A51572CDA6ACF007A44A4 /* AppListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppListViewModel.swift; sourceTree = "<group>"; };
+		317A51592CDBA33A007A44A4 /* PgyAppRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PgyAppRealm.swift; sourceTree = "<group>"; };
 		31E849BE2CD3C427001BEF6E /* PinkRoses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PinkRoses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31E849D42CD3C428001BEF6E /* PinkRosesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PinkRosesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		31E849DE2CD3C428001BEF6E /* PinkRosesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PinkRosesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -301,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				317A50EF2CD75F38007A44A4 /* PgyAccountRealm.swift */,
+				317A51592CDBA33A007A44A4 /* PgyAppRealm.swift */,
 			);
 			path = db;
 			sourceTree = "<group>";
@@ -618,6 +621,7 @@
 				317A50F92CD75F38007A44A4 /* AppDelegate.swift in Sources */,
 				317A50FA2CD75F38007A44A4 /* KV.swift in Sources */,
 				317A50FB2CD75F38007A44A4 /* Loading.swift in Sources */,
+				317A515A2CDBA33A007A44A4 /* PgyAppRealm.swift in Sources */,
 				317A50FC2CD75F38007A44A4 /* Tips.swift in Sources */,
 				317A50FD2CD75F38007A44A4 /* Toast.swift in Sources */,
 				317A51162CD90DD1007A44A4 /* PgyTarget.swift in Sources */,

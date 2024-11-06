@@ -6,9 +6,14 @@
 //
 
 import Foundation
+import RxSwift
+import RxRelay
 
 class AppListViewModel {
-    private var dataSource = [String: Result<[PgyAppListModel], Error>]()
+    /// 账号列表
+    let accounts = BehaviorRelay<[PgyAccountRealm]>(value: [])
+    /// 账号对应的应用数据
+    let apps = BehaviorRelay<[String: [PgyAppRealm]]>(value: [:])
     
     private var isRefreshing = false
 }
@@ -18,6 +23,8 @@ extension AppListViewModel {
     /// 刷新应用列表
     func refresh(_ completion: (() -> Void)? = nil) {
         let accounts = PgyAccountRealm.queryAll()
+        self.accounts.accept(accounts)
+        loadAppsFromRealm(accounts: accounts)
         guard !accounts.isEmpty else {
             completion?()
             return
@@ -42,7 +49,13 @@ extension AppListViewModel {
         }
         refresh(account: account, page: 1, list: []) { [weak self] result in
             guard let self else { return }
-            self.dataSource[account.id] = result
+            switch result {
+                case let .success(list):
+                    self.save(list, account: account)
+                    self.loadAppsFromRealm(account: account)
+                case .failure:
+                    break
+            }
             self.refresh(accounts: accounts, index: index + 1, completion)
         }
     }
@@ -77,10 +90,56 @@ extension AppListViewModel {
     }
 }
 
-// MARK: - 读取数据
 extension AppListViewModel {
-    /// 根据账号id获取对应的应用列表
-    func list(for account: String) -> Result<[PgyAppListModel], Error>? {
-        return dataSource[account]
+    /// 保存数据到本地
+    private func save(_ list: [PgyAppListModel], account: PgyAccountRealm) {
+        // 先获取本地存储的已在首页显示的应用
+        let appKeys = (try? PgyAppRealm.queryAllForEnable(accountId: account.id))?.map { $0.appKey } ?? []
+        // 将列表数据转为数据库存储对象
+        let list = list.map {
+            let obj = PgyAppRealm($0, account: account)
+            // 原来已经在首页选中的，也需要在首页选中
+            obj.isEnable = appKeys.contains(obj.appKey)
+            return obj
+        }
+        try? PgyAppRealm.deleteAll(forAccountId: account.id)
+        try? PgyAppRealm.insert(list, account: account)
+    }
+    
+    /// 从数据库中加载应用列表
+    private func loadAppsFromRealm(accounts: [PgyAccountRealm]) {
+        var apps = [String: [PgyAppRealm]]()
+        for account in accounts {
+            do {
+                let list = try PgyAppRealm.queryAll(accountId: account.id)
+                apps[account.id] = list
+            } catch {}
+        }
+        self.apps.accept(apps)
+    }
+    
+    /// 从数据库中加载应用列表
+    private func loadAppsFromRealm(account: PgyAccountRealm) {
+        loadAppsFromRealm(account: account.id)
+    }
+    
+    /// 从数据库中加载应用列表
+    private func loadAppsFromRealm(account: String) {
+        guard let list = try? PgyAppRealm.queryAll(accountId: account) else {
+            return
+        }
+        var apps = apps.value
+        apps[account] = list
+        self.apps.accept(apps)
+    }
+    
+}
+
+extension AppListViewModel {
+    func setEnable(_ isEnable: Bool, for record: PgyAppRealm) {
+        do {
+            try PgyAppRealm.updateEnable(isEnable, for: record.id)
+            loadAppsFromRealm(account: record.accountId)
+        } catch { }
     }
 }

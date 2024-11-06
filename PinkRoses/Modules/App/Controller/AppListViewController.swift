@@ -9,9 +9,6 @@ import UIKit
 import QMUIKit
 
 class AppListViewController: BaseViewController {
-    /// 账号列表
-    private var accounts = [PgyAccountRealm]()
-    
     private lazy var tableView: UITableView = {
         let tmp = UITableView(frame: .zero, style: .plain)
         tmp.separatorStyle = .none
@@ -31,7 +28,6 @@ class AppListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "应用列表"
-        accounts = PgyAccountRealm.queryAll()
         vm.refresh { [weak self] in
             guard let self else { return }
             self.tableView.reloadData()
@@ -68,7 +64,7 @@ class AppListViewController: BaseViewController {
 
 extension AppListViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return accounts.count
+        return vm.accounts.value.count
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -77,7 +73,7 @@ extension AppListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = QMUILabel()
-        header.text = accounts[section].accountName
+        header.text = vm.accounts.value[section].accountName
         header.textColor = .c666666
         header.font = .systemFont(ofSize: 14)
         header.backgroundColor = tableView.backgroundColor
@@ -94,29 +90,18 @@ extension AppListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let account = accounts[section]
-        let result = vm.list(for: account.id)
-        switch result {
-            case let .success(list):
-                return list.count
-            case .failure:
-                return 0
-            case .none:
-                return 0
-        }
+        let account = vm.accounts.value[section]
+        return vm.apps.value[account.id]?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withClass: AppListCell.self, for: indexPath)
-        let account = accounts[indexPath.section]
-        let result = vm.list(for: account.id)
-        switch result {
-            case let .success(list):
-                cell.model = list[safe: indexPath.row]
-            case .failure:
-                cell.model = nil
-            case .none:
-                cell.model = nil
+        let account = vm.accounts.value[indexPath.section]
+        let model = vm.apps.value[account.id]?[indexPath.row]
+        cell.model = model
+        cell.didEnableStatusChanged = { [weak self] isEnable in
+            guard let self, let model else { return }
+            self.vm.setEnable(isEnable, for: model)
         }
         return cell
     }

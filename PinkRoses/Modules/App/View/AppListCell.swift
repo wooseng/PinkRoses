@@ -10,11 +10,15 @@ import Kingfisher
 
 /// 应用列表的`cell`
 class AppListCell: UITableViewCell {
-    var model: PgyAppListModel? {
+    var didEnableStatusChanged: ((Bool) -> Void)?
+    
+    var model: PgyAppRealm? {
         didSet {
-            appNameLabel.text = model?.buildName
-            buildIdentifierLabel.text = model?.buildIdentifier
+            appNameLabel.text = model?.appName
+            appIdentifierLabel.text = model?.appIdentifier
+            appTypeImageView.image = model?.appTypeLogo
             iconImageView.kf.setImage(with: model?.icon)
+            switchItem.isOn = model?.isEnable ?? false
         }
     }
     
@@ -34,10 +38,17 @@ class AppListCell: UITableViewCell {
         return tmp
     }()
     
-    private lazy var buildIdentifierLabel: UILabel = {
+    private lazy var appIdentifierLabel: UILabel = {
         let tmp = UILabel()
         tmp.textColor = .c666666
         tmp.font = .systemFont(ofSize: 12)
+        return tmp
+    }()
+    
+    /// 应用类型图标
+    private lazy var appTypeImageView: UIImageView = {
+        let tmp = UIImageView()
+        tmp.contentMode = .scaleAspectFit
         return tmp
     }()
     
@@ -48,7 +59,13 @@ class AppListCell: UITableViewCell {
         tmp.alignment = .leading
         tmp.distribution = .equalSpacing
         tmp.addArrangedSubview(appNameLabel)
-        tmp.addArrangedSubview(buildIdentifierLabel)
+        tmp.addArrangedSubview(appIdentifierLabel)
+        return tmp
+    }()
+    
+    private lazy var switchItem: UISwitch = {
+        let tmp = UISwitch()
+        tmp.addTarget(self, action: #selector(didSwitchItemValueChanged), for: .valueChanged)
         return tmp
     }()
     
@@ -69,7 +86,10 @@ class AppListCell: UITableViewCell {
         selectionStyle = .none
         backgroundColor = .white
         contentView.addSubview(iconImageView)
-        contentView.addSubview(stackView)
+        contentView.addSubview(appNameLabel)
+        contentView.addSubview(appIdentifierLabel)
+        contentView.addSubview(appTypeImageView)
+        contentView.addSubview(switchItem)
         contentView.addSubview(separator)
     }
     
@@ -81,10 +101,22 @@ class AppListCell: UITableViewCell {
             $0.bottom.equalTo(-10)
             $0.width.height.equalTo(35)
         }
-        stackView.snp.makeConstraints {
+        appTypeImageView.snp.makeConstraints {
             $0.leading.equalTo(iconImageView.snp.trailing).offset(10)
+            $0.centerY.equalTo(appNameLabel)
+            $0.width.height.equalTo(16)
+        }
+        appNameLabel.snp.makeConstraints {
+            $0.leading.equalTo(appTypeImageView.snp.trailing).offset(5)
+            $0.top.equalTo(iconImageView)
+        }
+        appIdentifierLabel.snp.makeConstraints {
+            $0.leading.equalTo(iconImageView.snp.trailing).offset(10)
+            $0.bottom.equalTo(iconImageView)
+        }
+        switchItem.snp.makeConstraints {
             $0.trailing.equalTo(-16)
-            $0.top.bottom.equalTo(iconImageView)
+            $0.centerY.equalToSuperview()
         }
         separator.snp.makeConstraints {
             $0.leading.equalTo(16)
@@ -92,5 +124,9 @@ class AppListCell: UITableViewCell {
             $0.bottom.equalToSuperview()
             $0.height.equalTo(1)
         }
+    }
+    
+    @objc private func didSwitchItemValueChanged() {
+        didEnableStatusChanged?(switchItem.isOn)
     }
 }

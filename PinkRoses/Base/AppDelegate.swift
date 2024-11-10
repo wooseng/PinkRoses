@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         KV.initialize()
-        window?.rootViewController = BaseNavigationController(rootViewController: AppListViewController())
+        window?.rootViewController = BaseNavigationController(rootViewController: AppFollowListViewController())
         return true
     }
 }

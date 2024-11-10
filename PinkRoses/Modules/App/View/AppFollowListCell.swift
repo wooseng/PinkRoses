@@ -1,24 +1,20 @@
 //
-//  AppListCell.swift
+//  AppFollowListCell.swift
 //  PinkRoses
 //
-//  Created by 詹保成 on 2024/11/5.
+//  Created by 詹保成 on 2024/11/10.
 //
 
 import UIKit
-import Kingfisher
 
-/// 应用列表的`cell`
-class AppListCell: UITableViewCell {
-    var didEnableStatusChanged: ((Bool) -> Void)?
-    
+/// 用户关注应用的列表页面使用的`cell`
+class AppFollowListCell: UITableViewCell {
     var model: PgyAppRealm? {
         didSet {
             appNameLabel.text = model?.appName
             appIdentifierLabel.text = model?.appIdentifier
             appTypeImageView.image = model?.appTypeLogo
             iconImageView.kf.setImage(with: model?.icon)
-            switchItem.isOn = model?.isEnable ?? false
         }
     }
     
@@ -52,9 +48,11 @@ class AppListCell: UITableViewCell {
         return tmp
     }()
     
-    private lazy var switchItem: UISwitch = {
-        let tmp = UISwitch()
-        tmp.addTarget(self, action: #selector(didSwitchItemValueChanged), for: .valueChanged)
+    /// 右箭头视图
+    private lazy var rightArrowImageView: UIImageView = {
+        let tmp = UIImageView()
+        tmp.image = R.image.arrow_right()
+        tmp.contentMode = .scaleAspectFit
         return tmp
     }()
     
@@ -78,7 +76,7 @@ class AppListCell: UITableViewCell {
         contentView.addSubview(appNameLabel)
         contentView.addSubview(appIdentifierLabel)
         contentView.addSubview(appTypeImageView)
-        contentView.addSubview(switchItem)
+        contentView.addSubview(rightArrowImageView)
         contentView.addSubview(separator)
     }
     
@@ -97,17 +95,18 @@ class AppListCell: UITableViewCell {
         }
         appNameLabel.snp.makeConstraints {
             $0.leading.equalTo(appTypeImageView.snp.trailing).offset(5)
-            $0.trailing.lessThanOrEqualTo(switchItem.snp.leading).offset(-10)
+            $0.trailing.lessThanOrEqualTo(rightArrowImageView.snp.leading).offset(-10)
             $0.top.equalTo(iconImageView)
         }
         appIdentifierLabel.snp.makeConstraints {
             $0.leading.equalTo(iconImageView.snp.trailing).offset(10)
-            $0.trailing.lessThanOrEqualTo(switchItem.snp.leading).offset(-10)
+            $0.trailing.lessThanOrEqualTo(rightArrowImageView.snp.leading).offset(-10)
             $0.bottom.equalTo(iconImageView)
         }
-        switchItem.snp.makeConstraints {
+        rightArrowImageView.snp.makeConstraints {
             $0.trailing.equalTo(-16)
             $0.centerY.equalToSuperview()
+            $0.width.height.equalTo(16)
         }
         separator.snp.makeConstraints {
             $0.leading.equalTo(16)
@@ -117,7 +116,4 @@ class AppListCell: UITableViewCell {
         }
     }
     
-    @objc private func didSwitchItemValueChanged() {
-        didEnableStatusChanged?(switchItem.isOn)
-    }
 }

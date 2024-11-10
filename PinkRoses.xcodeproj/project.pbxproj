@@ -42,6 +42,8 @@
 		317A51552CDA6911007A44A4 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A51542CDA6911007A44A4 /* UIView+Extension.swift */; };
 		317A51582CDA6ACF007A44A4 /* AppListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A51572CDA6ACF007A44A4 /* AppListViewModel.swift */; };
 		317A515A2CDBA33A007A44A4 /* PgyAppRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A51592CDBA33A007A44A4 /* PgyAppRealm.swift */; };
+		317A515C2CE09976007A44A4 /* AppFollowListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A515B2CE09976007A44A4 /* AppFollowListViewController.swift */; };
+		317A515E2CE09B71007A44A4 /* AppFollowListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A515D2CE09B71007A44A4 /* AppFollowListCell.swift */; };
 		A6739208C5A600BBB828BA51 /* Pods_PinkRoses.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6792D9E38477AA56C7413020 /* Pods_PinkRoses.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +101,8 @@
 		317A51542CDA6911007A44A4 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		317A51572CDA6ACF007A44A4 /* AppListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppListViewModel.swift; sourceTree = "<group>"; };
 		317A51592CDBA33A007A44A4 /* PgyAppRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PgyAppRealm.swift; sourceTree = "<group>"; };
+		317A515B2CE09976007A44A4 /* AppFollowListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFollowListViewController.swift; sourceTree = "<group>"; };
+		317A515D2CE09B71007A44A4 /* AppFollowListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFollowListCell.swift; sourceTree = "<group>"; };
 		31E849BE2CD3C427001BEF6E /* PinkRoses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PinkRoses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31E849D42CD3C428001BEF6E /* PinkRosesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PinkRosesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		31E849DE2CD3C428001BEF6E /* PinkRosesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PinkRosesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -219,6 +223,7 @@
 		317A50DD2CD75F38007A44A4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				317A515B2CE09976007A44A4 /* AppFollowListViewController.swift */,
 				317A50DC2CD75F38007A44A4 /* AppListViewController.swift */,
 			);
 			path = Controller;
@@ -236,6 +241,7 @@
 		317A50DF2CD75F38007A44A4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				317A515D2CE09B71007A44A4 /* AppFollowListCell.swift */,
 				317A514F2CDA5C0D007A44A4 /* AppListCell.swift */,
 			);
 			path = View;
@@ -611,6 +617,7 @@
 				317A51502CDA5C0D007A44A4 /* AppListCell.swift in Sources */,
 				317A50F42CD75F38007A44A4 /* BaseTabBarController.swift in Sources */,
 				317A51112CD76E2F007A44A4 /* TitleValueItem.swift in Sources */,
+				317A515C2CE09976007A44A4 /* AppFollowListViewController.swift in Sources */,
 				317A51312CDA5935007A44A4 /* PgyAppListModel.swift in Sources */,
 				317A512E2CD91626007A44A4 /* PgyResponse.swift in Sources */,
 				317A50F52CD75F38007A44A4 /* BaseViewController.swift in Sources */,
@@ -618,6 +625,7 @@
 				317A510E2CD767A8007A44A4 /* AccountEditViewController.swift in Sources */,
 				317A50F72CD75F38007A44A4 /* TextFieldTableViewCell.swift in Sources */,
 				317A50F82CD75F38007A44A4 /* ValueTableViewCell.swift in Sources */,
+				317A515E2CE09B71007A44A4 /* AppFollowListCell.swift in Sources */,
 				317A50F92CD75F38007A44A4 /* AppDelegate.swift in Sources */,
 				317A50FA2CD75F38007A44A4 /* KV.swift in Sources */,
 				317A50FB2CD75F38007A44A4 /* Loading.swift in Sources */,

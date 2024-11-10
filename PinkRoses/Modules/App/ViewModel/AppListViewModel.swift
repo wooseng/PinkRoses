@@ -47,12 +47,19 @@ extension AppListViewModel {
             completion()
             return
         }
+        let key = "account.apps.refresh.latest." + account.id
+        if let latestDate = KV.date(forKey: key), Date().timeIntervalSince(latestDate) < 60 * 5 {
+            // 五分钟以内同一账号只会请求一次
+            completion()
+            return
+        }
         refresh(account: account, page: 1, list: []) { [weak self] result in
             guard let self else { return }
             switch result {
                 case let .success(list):
                     self.save(list, account: account)
                     self.loadAppsFromRealm(account: account)
+                    KV.set(Date(), forKey: key)
                 case .failure:
                     break
             }

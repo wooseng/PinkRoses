@@ -58,7 +58,7 @@ class AppListCell: UITableViewCell {
         return tmp
     }()
     
-    private lazy var separator = UIView(backgroundColor: UIColor.cF0F0F0)
+    private(set) lazy var separator = UIView(backgroundColor: UIColor.cF0F0F0)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

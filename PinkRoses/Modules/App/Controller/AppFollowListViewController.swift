@@ -64,7 +64,7 @@ class AppFollowListViewController: BaseViewController {
     }
     
     @objc private func onSettingClick() {
-        let vc = AppListViewController()
+        let vc = SettingsViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -116,10 +116,11 @@ extension AppFollowListViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withClass: AppFollowListCell.self, for: indexPath)
         let account = accounts[indexPath.section]
-        let model = apps[account.id]?[indexPath.row]
-        cell.model = model
+        let apps = apps[account.id] ?? []
+        let cell = tableView.dequeueReusableCell(withClass: AppFollowListCell.self, for: indexPath)
+        cell.model = apps[indexPath.row]
+        cell.separator.isHidden = indexPath.row == apps.count - 1
         return cell
     }
     

@@ -47,19 +47,6 @@ class AppListViewController: BaseViewController {
             $0.bottom.equalTo(view.snp.bottomMargin)
         }
     }
-    
-    override func setupNavigationItems() {
-        super.setupNavigationItems()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: R.image.settings()?.resize(width: 25, height: 25),
-                                                            style: .plain,
-                                                            target: self,
-                                                            action: #selector(onSettingClick))
-    }
-    
-    @objc private func onSettingClick() {
-        let vc = AccountListViewController()
-        navigationController?.pushViewController(vc, animated: true)
-    }
 }
 
 extension AppListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -95,12 +82,14 @@ extension AppListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withClass: AppListCell.self, for: indexPath)
         let account = vm.accounts.value[indexPath.section]
-        let model = vm.apps.value[account.id]?[indexPath.row]
+        let apps = vm.apps.value[account.id] ?? []
+        let model = apps[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withClass: AppListCell.self, for: indexPath)
         cell.model = model
+        cell.separator.isHidden = indexPath.row == apps.count - 1
         cell.didEnableStatusChanged = { [weak self] isEnable in
-            guard let self, let model else { return }
+            guard let self else { return }
             self.vm.setEnable(isEnable, for: model)
         }
         return cell

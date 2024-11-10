@@ -56,7 +56,7 @@ class AppFollowListCell: UITableViewCell {
         return tmp
     }()
     
-    private lazy var separator = UIView(backgroundColor: UIColor.cF0F0F0)
+    private(set) lazy var separator = UIView(backgroundColor: UIColor.cF0F0F0)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -106,7 +106,7 @@ class AppFollowListCell: UITableViewCell {
         rightArrowImageView.snp.makeConstraints {
             $0.trailing.equalTo(-16)
             $0.centerY.equalToSuperview()
-            $0.width.height.equalTo(16)
+            $0.width.height.equalTo(25)
         }
         separator.snp.makeConstraints {
             $0.leading.equalTo(16)
@@ -115,5 +115,4 @@ class AppFollowListCell: UITableViewCell {
             $0.height.equalTo(1)
         }
     }
-    
 }

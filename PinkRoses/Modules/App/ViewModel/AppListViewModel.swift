@@ -48,7 +48,7 @@ extension AppListViewModel {
             return
         }
         let key = "account.apps.refresh.latest." + account.id
-        if let latestDate = KV.date(forKey: key), Date().timeIntervalSince(latestDate) < 60 * 5 {
+        if let latestDate = KV.date(forKey: key), Date().timeIntervalSince(latestDate) < 60 * 10 {
             // 五分钟以内同一账号只会请求一次
             completion()
             return

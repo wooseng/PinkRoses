@@ -8,6 +8,15 @@
 import Foundation
 
 enum SettingsRowItem {
-    case pgyApiKey
-    case pgyUserKey
+    case accounts
+    case apps
+}
+
+extension SettingsRowItem {
+    var title: String {
+        switch self {
+            case .accounts: return "账号管理"
+            case .apps:     return "应用管理"
+        }
+    }
 }

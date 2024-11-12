@@ -14,8 +14,6 @@ class PgyAppRealm: Object {
     @Persisted(primaryKey: true) var id: String
     /// 应用所属账号的唯一标识
     @Persisted var accountId: String
-    /// 应用所属账号的名称
-    @Persisted var accountName: String
     /// 应用在蒲公英中的唯一标识
     @Persisted var appKey: String
     /// 应用名称
@@ -48,7 +46,6 @@ class PgyAppRealm: Object {
         self.init()
         id = UUID().uuidString
         accountId = account.id
-        accountName = account.accountName
         appKey = obj.appKey
         appName = obj.buildName
         appIdentifier = obj.buildIdentifier
@@ -61,7 +58,6 @@ class PgyAppRealm: Object {
         let obj = PgyAppRealm()
         obj.id = id
         obj.accountId = accountId
-        obj.accountName = accountName
         obj.appKey = appKey
         obj.appName = appName
         obj.appIdentifier = appIdentifier
@@ -148,5 +144,15 @@ extension PgyAppRealm {
             .filter { $0.isEnable }
             .map { $0.copy() }
         return Array(results)
+    }
+    
+    /// 根据记录`id`获取对应的记录
+    static func query(forId id: String) -> PgyAppRealm? {
+        do {
+            let realm = try Realm.getDefault()
+            return realm.object(ofType: PgyAppRealm.self, forPrimaryKey: id)?.copy()
+        } catch {
+            return nil
+        }
     }
 }

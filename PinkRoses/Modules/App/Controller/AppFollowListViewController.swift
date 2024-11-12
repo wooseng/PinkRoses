@@ -126,5 +126,11 @@ extension AppFollowListViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let account = accounts[indexPath.section]
+        guard let app = apps[account.id]?[indexPath.row] else {
+            return
+        }
+        let vc = AppDetailViewController(app)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

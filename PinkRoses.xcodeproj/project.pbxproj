@@ -44,6 +44,13 @@
 		317A515A2CDBA33A007A44A4 /* PgyAppRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A51592CDBA33A007A44A4 /* PgyAppRealm.swift */; };
 		317A515C2CE09976007A44A4 /* AppFollowListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A515B2CE09976007A44A4 /* AppFollowListViewController.swift */; };
 		317A515E2CE09B71007A44A4 /* AppFollowListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A515D2CE09B71007A44A4 /* AppFollowListCell.swift */; };
+		317A51602CE3915F007A44A4 /* AppDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A515F2CE3915F007A44A4 /* AppDetailViewController.swift */; };
+		317A51622CE39488007A44A4 /* PgyAppBuildRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A51612CE39488007A44A4 /* PgyAppBuildRealm.swift */; };
+		317A51642CE39642007A44A4 /* PgyAppBuildListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A51632CE39642007A44A4 /* PgyAppBuildListResponse.swift */; };
+		317A51662CE3966B007A44A4 /* PgyAppBuildListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A51652CE3966B007A44A4 /* PgyAppBuildListModel.swift */; };
+		317A51692CE396D0007A44A4 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A51682CE396D0007A44A4 /* AppManager.swift */; };
+		317A516B2CE397F3007A44A4 /* AppRefreshTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A516A2CE397F3007A44A4 /* AppRefreshTask.swift */; };
+		317A516F2CE39914007A44A4 /* AppBuildListRefreshTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A516E2CE39914007A44A4 /* AppBuildListRefreshTask.swift */; };
 		A6739208C5A600BBB828BA51 /* Pods_PinkRoses.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6792D9E38477AA56C7413020 /* Pods_PinkRoses.framework */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +110,13 @@
 		317A51592CDBA33A007A44A4 /* PgyAppRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PgyAppRealm.swift; sourceTree = "<group>"; };
 		317A515B2CE09976007A44A4 /* AppFollowListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFollowListViewController.swift; sourceTree = "<group>"; };
 		317A515D2CE09B71007A44A4 /* AppFollowListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFollowListCell.swift; sourceTree = "<group>"; };
+		317A515F2CE3915F007A44A4 /* AppDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailViewController.swift; sourceTree = "<group>"; };
+		317A51612CE39488007A44A4 /* PgyAppBuildRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PgyAppBuildRealm.swift; sourceTree = "<group>"; };
+		317A51632CE39642007A44A4 /* PgyAppBuildListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PgyAppBuildListResponse.swift; sourceTree = "<group>"; };
+		317A51652CE3966B007A44A4 /* PgyAppBuildListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PgyAppBuildListModel.swift; sourceTree = "<group>"; };
+		317A51682CE396D0007A44A4 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
+		317A516A2CE397F3007A44A4 /* AppRefreshTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRefreshTask.swift; sourceTree = "<group>"; };
+		317A516E2CE39914007A44A4 /* AppBuildListRefreshTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBuildListRefreshTask.swift; sourceTree = "<group>"; };
 		31E849BE2CD3C427001BEF6E /* PinkRoses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PinkRoses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31E849D42CD3C428001BEF6E /* PinkRosesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PinkRosesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		31E849DE2CD3C428001BEF6E /* PinkRosesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PinkRosesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -223,6 +237,7 @@
 		317A50DD2CD75F38007A44A4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				317A515F2CE3915F007A44A4 /* AppDetailViewController.swift */,
 				317A515B2CE09976007A44A4 /* AppFollowListViewController.swift */,
 				317A50DC2CD75F38007A44A4 /* AppListViewController.swift */,
 			);
@@ -242,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				317A50DD2CD75F38007A44A4 /* Controller */,
+				317A51672CE396BB007A44A4 /* Manager */,
 				317A50DF2CD75F38007A44A4 /* View */,
 				317A51562CDA6AC3007A44A4 /* ViewModel */,
 			);
@@ -299,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				317A50EF2CD75F38007A44A4 /* PgyAccountRealm.swift */,
+				317A51612CE39488007A44A4 /* PgyAppBuildRealm.swift */,
 				317A51592CDBA33A007A44A4 /* PgyAppRealm.swift */,
 			);
 			path = db;
@@ -347,6 +364,8 @@
 		317A512F2CDA591E007A44A4 /* Pgy */ = {
 			isa = PBXGroup;
 			children = (
+				317A51652CE3966B007A44A4 /* PgyAppBuildListModel.swift */,
+				317A51632CE39642007A44A4 /* PgyAppBuildListResponse.swift */,
 				317A51302CDA5935007A44A4 /* PgyAppListModel.swift */,
 				317A51322CDA5944007A44A4 /* PgyAppListResponse.swift */,
 				317A512D2CD91626007A44A4 /* PgyResponse.swift */,
@@ -361,6 +380,24 @@
 				317A51572CDA6ACF007A44A4 /* AppListViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		317A51672CE396BB007A44A4 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				317A51702CE39A39007A44A4 /* Task */,
+				317A51682CE396D0007A44A4 /* AppManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		317A51702CE39A39007A44A4 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				317A516E2CE39914007A44A4 /* AppBuildListRefreshTask.swift */,
+				317A516A2CE397F3007A44A4 /* AppRefreshTask.swift */,
+			);
+			path = Task;
 			sourceTree = "<group>";
 		};
 		31E849B52CD3C427001BEF6E = {
@@ -607,16 +644,23 @@
 			files = (
 				317A50F32CD75F38007A44A4 /* BaseNavigationController.swift in Sources */,
 				317A51502CDA5C0D007A44A4 /* AppListCell.swift in Sources */,
+				317A51642CE39642007A44A4 /* PgyAppBuildListResponse.swift in Sources */,
 				317A50F42CD75F38007A44A4 /* BaseTabBarController.swift in Sources */,
 				317A51112CD76E2F007A44A4 /* TitleValueItem.swift in Sources */,
 				317A515C2CE09976007A44A4 /* AppFollowListViewController.swift in Sources */,
+				317A51692CE396D0007A44A4 /* AppManager.swift in Sources */,
 				317A51312CDA5935007A44A4 /* PgyAppListModel.swift in Sources */,
 				317A512E2CD91626007A44A4 /* PgyResponse.swift in Sources */,
 				317A50F52CD75F38007A44A4 /* BaseViewController.swift in Sources */,
+				317A516B2CE397F3007A44A4 /* AppRefreshTask.swift in Sources */,
 				317A50F62CD75F38007A44A4 /* SwitchTableViewCell.swift in Sources */,
 				317A510E2CD767A8007A44A4 /* AccountEditViewController.swift in Sources */,
 				317A50F72CD75F38007A44A4 /* TextFieldTableViewCell.swift in Sources */,
+				317A51622CE39488007A44A4 /* PgyAppBuildRealm.swift in Sources */,
+				317A516F2CE39914007A44A4 /* AppBuildListRefreshTask.swift in Sources */,
+				317A51602CE3915F007A44A4 /* AppDetailViewController.swift in Sources */,
 				317A50F82CD75F38007A44A4 /* ValueTableViewCell.swift in Sources */,
+				317A51662CE3966B007A44A4 /* PgyAppBuildListModel.swift in Sources */,
 				317A515E2CE09B71007A44A4 /* AppFollowListCell.swift in Sources */,
 				317A50F92CD75F38007A44A4 /* AppDelegate.swift in Sources */,
 				317A50FA2CD75F38007A44A4 /* KV.swift in Sources */,

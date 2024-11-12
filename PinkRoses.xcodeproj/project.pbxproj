@@ -229,15 +229,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		317A50DE2CD75F38007A44A4 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				317A51302CDA5935007A44A4 /* PgyAppListModel.swift */,
-				317A51322CDA5944007A44A4 /* PgyAppListResponse.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		317A50DF2CD75F38007A44A4 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,7 +242,6 @@
 			isa = PBXGroup;
 			children = (
 				317A50DD2CD75F38007A44A4 /* Controller */,
-				317A50DE2CD75F38007A44A4 /* Model */,
 				317A50DF2CD75F38007A44A4 /* View */,
 				317A51562CDA6AC3007A44A4 /* ViewModel */,
 			);
@@ -357,6 +347,8 @@
 		317A512F2CDA591E007A44A4 /* Pgy */ = {
 			isa = PBXGroup;
 			children = (
+				317A51302CDA5935007A44A4 /* PgyAppListModel.swift */,
+				317A51322CDA5944007A44A4 /* PgyAppListResponse.swift */,
 				317A512D2CD91626007A44A4 /* PgyResponse.swift */,
 				317A51152CD90DD1007A44A4 /* PgyTarget.swift */,
 			);
